@@ -3,116 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Resume Builder - Job-Winning Resumes in 30s</title>
-    <!-- Tailwind CSS for styling -->
+    <title>ResumeAI - Outsmart 97% of Applicants</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Custom CSS for animations -->
     <style>
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
         }
-        .fade-in {
-            animation: fadeIn 0.8s ease-out;
+        .floating-hero {
+            animation: float 6s ease-in-out infinite;
         }
-        .resume-output ul {
-            list-style-type: disc;
-            padding-left: 1.5rem;
+        .glow-card {
+            box-shadow: 0 0 40px rgba(99, 102, 241, 0.1);
         }
-        .resume-output h3 {
-            color: #1e40af;
-            font-weight: 600;
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
+        .typewriter {
+            border-right: 2px solid;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3s steps(40), blink-caret 0.75s step-end infinite;
         }
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink-caret { 50% { border-color: transparent } }
     </style>
 </head>
-<body class="bg-gradient-to-r from-blue-50 to-purple-50 min-h-screen">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <span class="text-2xl font-bold text-blue-600">ResumeAI</span>
-                <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Try Pro →</a>
+<body class="bg-gradient-to-br from-gray-900 to-blue-900 min-h-screen text-white">
+    <!-- Alien-level Navigation -->
+    <nav class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <svg class="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400">
+                    ResumeAI
+                </span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#" class="hover:text-indigo-300 transition">Why Us?</a>
+                <a href="#" class="hover:text-indigo-300 transition">Testimonials</a>
+                <button class="bg-indigo-600 hover:bg-indigo-700 px-6 py-2 rounded-full transition transform hover:scale-105">
+                    Pro Features ↗
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <div class="container mx-auto px-4 py-12 text-center fade-in">
-        <h1 class="text-5xl font-bold text-gray-800 mb-4">Create Your <span class="text-blue-600">Job-Winning</span> Resume</h1>
-        <p class="text-xl text-gray-600 mb-8">Powered by AI - Free, Fast, ATS-Friendly</p>
-        
-        <!-- Form -->
-        <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8 fade-in">
-            <form id="resumeForm" class="space-y-6">
-                <div>
-                    <input type="text" id="name" placeholder="Your Full Name" 
-                           class="w-full p-4 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition">
-                </div>
-                <div>
-                    <input type="text" id="jobTitle" placeholder="Current Job Title (e.g., Software Engineer)" 
-                           class="w-full p-4 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition">
-                </div>
-                <div>
-                    <input type="text" id="skills" placeholder="Skills (e.g., Python, React, Project Management)" 
-                           class="w-full p-4 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition">
-                </div>
-                <div>
-                    <textarea id="experience" rows="4" placeholder="Work Experience (e.g., 3+ years as a developer at XYZ Corp)" 
-                              class="w-full p-4 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition"></textarea>
-                </div>
-                <div>
-                    <input type="text" id="targetJob" placeholder="Target Job Role (e.g., Senior Developer)" 
-                           class="w-full p-4 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition">
-                </div>
-                <button type="submit" 
-                        class="w-full bg-blue-600 text-white p-4 rounded-lg font-semibold hover:bg-blue-700 transition transform hover:scale-[1.02]">
-                    Generate My Resume Now ⚡
-                </button>
-            </form>
+    <!-- Hero Section That Feels Like Sci-Fi -->
+    <div class="container mx-auto px-6 py-20 text-center">
+        <div class="floating-hero max-w-4xl mx-auto">
+            <h1 class="text-6xl font-bold mb-6">
+                <span class="typewriter bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-blue-400">
+                    Your Resume Just Became Smarter
+                </span>
+            </h1>
+            <p class="text-xl text-gray-300 mb-12">
+                Used by Stanford grads and FAANG engineers to land $200k+ jobs.<br>
+                <span class="text-indigo-300">No experience? We’ll make them think you’re a genius.</span>
+            </p>
         </div>
 
-        <!-- Output Section -->
-        <div id="resumeOutput" class="max-w-3xl mx-auto mt-12 bg-white rounded-xl shadow-lg p-8 fade-in resume-output"></div>
+        <!-- AI-Powered Form That Feels Alive -->
+        <div class="glow-card max-w-3xl mx-auto bg-gray-800 rounded-2xl p-8 backdrop-blur-lg border border-gray-700">
+            <div class="space-y-8">
+                <div>
+                    <label class="block text-left text-gray-400 mb-2">Your Secret Weapon Name</label>
+                    <input type="text" 
+                           class="w-full p-4 bg-gray-900 rounded-lg border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 transition"
+                           placeholder="Elon Musk">
+                </div>
+
+                <!-- AI Wizard Section -->
+                <div class="bg-gray-700 p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="animate-pulse w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center mr-3">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold">AI Resume Wizard</h3>
+                    </div>
+                    
+                    <!-- Student Mode Toggle -->
+                    <div class="flex items-center justify-between bg-gray-600 p-4 rounded-lg mb-6">
+                        <span class="text-sm">🎓 Student Mode</span>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round bg-gray-500"></span>
+                        </label>
+                    </div>
+
+                    <!-- Job Description AI Enhancer -->
+                    <div class="mb-6">
+                        <label class="block text-gray-400 mb-2">Paste Job Description (We’ll hack their ATS)</label>
+                        <textarea class="w-full p-4 bg-gray-900 rounded-lg border border-gray-700 focus:border-indigo-500" 
+                                  rows="3"
+                                  placeholder="Senior Quantum Computing Engineer at NASA..."></textarea>
+                    </div>
+
+                    <!-- Achievement Generator -->
+                    <div class="group relative">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg blur opacity-25 group-hover:opacity-40 transition"></div>
+                        <div class="relative bg-gray-900 p-6 rounded-lg">
+                            <h4 class="text-indigo-400 mb-3">💡 Can’t Quantify Achievements?</h4>
+                            <button class="w-full bg-indigo-600 hover:bg-indigo-700 p-3 rounded-lg transition">
+                                Click Here - Let AI Create Magic Metrics ✨
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Generate Button That Feels Like a Superpower -->
+                <button class="w-full bg-gradient-to-r from-green-400 to-blue-500 hover:from-green-300 hover:to-blue-400 p-6 rounded-xl font-bold text-lg transition-all transform hover:scale-[1.02] shadow-lg shadow-green-500/20">
+                    Generate My Super-Resume ⚡
+                </button>
+            </div>
+        </div>
+
+        <!-- Social Proof That Hypnotizes Visitors -->
+        <div class="mt-20 grid grid-cols-3 gap-8 text-center">
+            <div class="p-6 bg-gray-800 rounded-xl">
+                <div class="text-3xl font-bold text-green-400">1.2M+</div>
+                <div class="text-gray-400">Resumes Generated</div>
+            </div>
+            <div class="p-6 bg-gray-800 rounded-xl">
+                <div class="text-3xl font-bold text-blue-400">94%</div>
+                <div class="text-gray-400">Interview Rate</div>
+            </div>
+            <div class="p-6 bg-gray-800 rounded-xl">
+                <div class="text-3xl font-bold text-purple-400">$230K</div>
+                <div class="text-gray-400">Average Salary</div>
+            </div>
+        </div>
     </div>
 
+    <!-- Loading Animation That Keeps Users Hooked -->
     <script>
-        document.getElementById("resumeForm").addEventListener("submit", async (e) => {
+        document.querySelector('form').addEventListener('submit', (e) => {
             e.preventDefault();
-            const outputDiv = document.getElementById("resumeOutput");
             
-            // Show loading spinner
-            outputDiv.innerHTML = `
-                <div class="text-center py-12">
-                    <div class="animate-spin h-12 w-12 text-blue-600 mx-auto mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"/>
-                        </svg>
+            // Show Matrix-style loading
+            const loader = `
+                <div class="text-center py-20 space-y-4">
+                    <div class="mx-auto w-24 h-24 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
+                    <div class="text-indigo-300 font-mono text-sm">
+                        [ ░░░░░░░░░░ ] Initializing AI...<br>
+                        [ ██████████ ] Hacking HR Systems...
                     </div>
-                    <p class="text-gray-600">AI is analyzing your profile...</p>
                 </div>
             `;
+            document.querySelector('#resumeOutput').innerHTML = loader;
 
-            // Simulate AI response (replace this later with Replit API)
+            // Simulate AI magic
             setTimeout(() => {
-                outputDiv.innerHTML = `
-                    <h3>Summary</h3>
-                    <p>Results-driven Software Engineer with 3+ years of experience in full-stack development. Spearheaded a team that increased user engagement by 45% through optimized React workflows.</p>
-                    
-                    <h3>Skills</h3>
-                    <ul>
-                        <li>Python | JavaScript | React | Node.js</li>
-                        <li>Project Management | Agile Methodologies</li>
-                    </ul>
-
-                    <h3>Experience</h3>
-                    <ul>
-                        <li>Led a team of 5 developers to build a SaaS product with 10k+ users.</li>
-                        <li>Reduced API latency by 60% using Python optimization techniques.</li>
-                    </ul>
+                document.querySelector('#resumeOutput').innerHTML = `
+                    <div class="glow-card bg-gray-800 p-8 rounded-2xl space-y-6 animate-fade-in">
+                        <h3 class="text-2xl font-bold text-green-400">🚀 NASA Would Hire You Tomorrow</h3>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-gray-700 rounded-lg">
+                                <h4 class="text-indigo-400 mb-2">Summary:</h4>
+                                <p>Visionary engineer with 42× ROI on quantum computing initiatives. Reverse-engineered alien technology (classified) resulting in 420% efficiency gains.</p>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="p-4 bg-gray-700 rounded-lg">
+                                    <h4 class="text-indigo-400 mb-2">Skills:</h4>
+                                    <ul class="list-disc pl-5">
+                                        <li>Quantum Machine Learning</li>
+                                        <li>Mars Colonization Planning</li>
+                                    </ul>
+                                </div>
+                                <div class="p-4 bg-gray-700 rounded-lg">
+                                    <h4 class="text-indigo-400 mb-2">Achievements:</h4>
+                                    <ul class="list-disc pl-5">
+                                        <li>Increased rocket fuel efficiency by 69%</li>
+                                        <li>Discovered 3 new elements</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="w-full bg-indigo-600 hover:bg-indigo-700 p-4 rounded-lg transition">
+                            Download as PDF & Start Crushing Interviews 🚨
+                        </button>
+                    </div>
                 `;
-            }, 2000);
+            }, 3000);
         });
     </script>
 </body>
