@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Free AI Resume Builder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+        h1 {
+            color: #2d3436;
+            text-align: center;
+        }
+        #resumeForm {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background: #1877f2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #166fe5;
+        }
+        #resumeOutput {
+            white-space: pre-wrap;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>AI Resume Builder 🚀</h1>
+    <form id="resumeForm">
+        <input type="text" id="name" placeholder="Your Full Name" required>
+        <input type="text" id="jobTitle" placeholder="Current Job Title (e.g., Software Engineer)" required>
+        <input type="text" id="skills" placeholder="Skills (e.g., Python, React, Project Management)" required>
+        <textarea id="experience" placeholder="Work Experience (e.g., 3+ years as a developer at XYZ Corp)" rows="4" required></textarea>
+        <input type="text" id="targetJob" placeholder="Target Job Role (e.g., Senior Developer)" required>
+        <button type="submit">Generate My Resume →</button>
+    </form>
+    <h2>Your AI-Generated Resume:</h2>
+    <div id="resumeOutput"></div>
+
+    <script>
+        document.getElementById("resumeForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+            const formData = {
+                name: document.getElementById("name").value,
+                job_title: document.getElementById("jobTitle").value,
+                skills: document.getElementById("skills").value,
+                experience: document.getElementById("experience").value,
+                target_job: document.getElementById("targetJob").value
+            };
+            document.getElementById("resumeOutput").innerHTML = "Generating... (AI is working on it!)";
+            
+            // Replace YOUR_REPLIT_URL with your actual Replit backend URL later
+            try {
+                const response = await fetch("YOUR_REPLIT_URL/generate_resume", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(formData)
+                });
+                const data = await response.json();
+                document.getElementById("resumeOutput").innerHTML = data.resume;
+            } catch (error) {
+                document.getElementById("resumeOutput").innerHTML = "Error: Backend not connected yet. Complete Step 3 (Replit setup) to fix this.";
+            }
+        });
+    </script>
+</body>
+</html>
